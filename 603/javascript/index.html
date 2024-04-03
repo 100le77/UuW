@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forma</title>
+    
+    <script type="text/javascript">
+    
+        function ispisi()
+        {
+            DispWin=window.open('','Informacije',
+            'toolbar=no,status=no,width=300,height=200');
+            message="<ul><li>IME:</li>"+document.forma1.ime.value;
+            message+="<li>PREZIME:</li>"+document.forma1.prezime.value;
+            message+="<li>BROJ INDEKSA:</li>"+document.forma1.brind.value +"</ul>";
+
+            DispWin.document.write(message);
+        }
+
+        function ispisiAlert()
+        {
+            alert("IME: "+document.forma1.ime.value+" "+
+            "PREZIME: "+document.forma1.prezime.value+" "+
+            "BROJ INDEKSA: "+document.forma1.brind.value);
+        }
+
+        function ispisiPromenu()
+        {
+            var ulaz=document.getElementById('ulazkorisnika').value;
+            document.getElementById('bolded').innerHTML=ulaz;
+        }
+
+    </script>
+</head>
+<body>
+    <p>Dobrodosao <b id='bolded'>korsinice</b></p>
+    <form name="forma1">
+        <table>
+            <tr>
+                <td>Broj indeksa: </td>
+                <td><input type="number" name="brind"></input></td>
+            </tr>
+            <tr>
+                <td>Ime: </td>
+                <td><input type="text" name="ime"></input></td>
+            </tr>
+            <tr>
+                <td>Prezime: </td>
+                <td><input type="text" name="prezime"></input></td>
+            </tr>
+            <tr>
+                <td>
+                <p><input type="button" value="prikazi" onclick="ispisi()"></p>
+                </td>
+                <td>
+                    <p><input type="button" value="prikazi alert" onclick="ispisiAlert()"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>Menjaj podebljano: </td>
+                <td><input type="text" name="menjaj" id='ulazkorisnika'></input></td>
+            </tr>
+            <tr>
+                <td>
+                    <p><input type="button" value="menjaj podebljano" onclick="ispisiPromenu()"></p>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
